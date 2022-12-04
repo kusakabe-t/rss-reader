@@ -1,5 +1,4 @@
 node_modules
-dist/
 .prettier.config.js
 .eslintrc.js
-src-tauri/
+src-tauri
