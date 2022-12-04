@@ -9,11 +9,11 @@ parameters:
 jobs:
   front_lint_check:
     docker:
-      - image: cimg/node:18.1.0
-    working_directory: ~/movie_converter
+      - image: cimg/node:16.16.0
+    working_directory: ~/rss_reader
     steps:
       - checkout:
-          path: ~/movie_converter
+          path: ~/rss_reader
       - run:
           name: Install dependencies
           command: yarn
@@ -23,10 +23,10 @@ jobs:
   backend_test:
     docker:
       - image: cimg/rust:1.64.0
-    working_directory: ~/movie_converter/src-tauri
+    working_directory: ~/rss_reader/src-tauri
     steps:
       - checkout:
-          path: ~/movie_converter
+          path: ~/rss_reader
       # TODO: テストを書いたら追加
       - run:
           name: Check cargo version
